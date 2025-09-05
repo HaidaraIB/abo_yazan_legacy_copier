@@ -30,7 +30,7 @@ def lock_and_release(func):
 
 def connect_and_close(func):
     def wrapper(*args, **kwargs):
-        db = sqlite3.connect("telethon_db.sqlite3")
+        db = sqlite3.connect("data.sqlite3")
         db.row_factory = sqlite3.Row
         db.create_function("REGEXP", 2, regexp)
         cr = db.cursor()
@@ -51,7 +51,7 @@ class TelethonDB:
 
     @staticmethod
     def creat_tables():
-        db = sqlite3.connect("telethon_db.sqlite3")
+        db = sqlite3.connect("data.sqlite3")
         cr = db.cursor()
         script = f"""
 
