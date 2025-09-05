@@ -5,7 +5,7 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-from telethon import events, TelegramClient, Button
+from telethon import events, TelegramClient
 from telethon.tl.patched import Message
 import os
 import asyncio

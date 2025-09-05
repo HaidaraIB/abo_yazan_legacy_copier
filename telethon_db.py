@@ -11,7 +11,7 @@ def lock_and_release(func):
         cr = None
         try:
             await lock.acquire()
-            db = sqlite3.connect("telethon_db.sqlite3")
+            db = sqlite3.connect("data.sqlite3")
             db.row_factory = sqlite3.Row
             cr = db.cursor()
             result = await func(*args, **kwargs, cr=cr)
