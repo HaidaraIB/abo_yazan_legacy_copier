@@ -78,18 +78,7 @@ async def copy_messages(event, gallery, to):
                         from_channel_id=event.chat_id,
                         to_channel_id=channel,
                     )
-                if channel == PUBLIC_CHANNEL and "Profit" in message.text:
-                    msg = await client.send_file(
-                        channel,
-                        caption=(
-                            "ربح ✅✅✅\n"
-                            "للإنظمام الى جروب الـvip 🔥\n\n"
-                            "[TEAM ABO YAZAN](t.me/BOUCHA_A)"
-                        ),
-                        file=message.photo if message.photo else message.video,
-                        reply_to=stored_msg[0] if stored_msg else None,
-                    )
-                elif channel != PUBLIC_CHANNEL:
+                if channel != PUBLIC_CHANNEL:
                     msg = await client.send_file(
                         channel,
                         caption=message.text.replace(
@@ -114,13 +103,7 @@ async def copy_messages(event, gallery, to):
                         from_channel_id=event.chat_id,
                         to_channel_id=channel,
                     )
-                if channel == PUBLIC_CHANNEL and "Open your Platform" in message.text:
-                    msg = await client.send_message(
-                        channel,
-                        "نبدأ الجلسة على جروب الـvip 🔥",
-                        reply_to=stored_msg[0] if stored_msg else None,
-                    )
-                elif channel != PUBLIC_CHANNEL:
+                if channel != PUBLIC_CHANNEL:
                     msg = await client.send_message(
                         channel,
                         message.text.replace(
